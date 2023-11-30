@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    display: flex;
+    margin-top: 3vh;
+    align-items: center;
+    justify-content: center;
+}
+
+main {
+    height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#senha-atual {
+    font-size: 100px;
+}
+
+.senha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: black;
+    border-radius: 20%;
+    padding: 10px 20px;
+}
+
+.senha-historico {
+    display: flex;
+    height: 20vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
