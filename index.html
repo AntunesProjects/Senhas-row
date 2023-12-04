@@ -11,20 +11,30 @@
     <main>
         <div id="senha-atual">
             <div class="senha-atual-texto">SENHA ATUAL</div>
-            <div class="numero">10</div>
+            <div class="numero">00</div>
         </div>
         <div class="senha-historico">
             <div class="chamadas">CHAMADAS</div>
             <div class="senha" id="h9">
-                <p>9</p>
+                <p>0</p>
             </div>
             <div class="senha" id="h8">
-                <p>8</p>
+                <p>0</p>
             </div>
             <div class="senha" id="h7">
-                <p>7</p>
+                <p>0</p>
             </div>
         </div>
     </main>
+    <script src="script.js"></script>
+    <script>
+            function reloadPage() {
+        setTimeout(function() {
+        location.reload();
+        }, 3000); // Tempo em milissegundos (5 segundos)
+    }
+    // Chama a função para recarregar a página
+    reloadPage();
+    </script>
 </body>
 </html>
