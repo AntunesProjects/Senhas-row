@@ -81,3 +81,15 @@ main {
     border-radius: 10%;
     padding: 10px 10px;
 }
+
+footer {
+    display: flex;
+}
+
+footer a{
+    margin-left: 1vh;
+    margin-top: 6vh;
+    background-color: aliceblue;
+    width: 5vh;
+    border-radius: 10px;
+}
