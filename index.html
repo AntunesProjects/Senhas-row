@@ -9,49 +9,27 @@
 </head>
 <body>
     <main>
-        <div id="senha-atual">
-            <div class="senha-atual-texto">SENHA ATUAL</div>
-            <div class="numero">00</div>
-        </div>
-        <div class="senha-historico">
-            <div class="chamadas">CHAMADAS</div>
-            <div class="senha" id="h9">
-                <p>0</p>
+        <h1>CONTROLE DE PEDIDOS</h1>
+        <img class="background" src="/assets/Wallpaper-01.jpg" alt="" srcset="">
+        <div class="container">
+            <div id="senha-atual">
+                <div class="senha-atual-texto">LIBERADO</div>
+                <div class="numero">00</div>
             </div>
-            <div class="senha" id="h8">
-                <p>0</p>
-            </div>
-            <div class="senha" id="h7">
-                <p>0</p>
+            <div class="senha-historico">
+                <div class="chamadas">PEDIDOS JÁ CHAMADOS:</div>
+                <div class="senha" id="h3">
+                    <p>0</p>
+                </div>
+                <div class="senha" id="h2">
+                    <p>0</p>
+                </div>
+                <div class="senha" id="h1">
+                    <p>0</p>
+                </div>
             </div>
         </div>
     </main>
-    <footer>
-        <a href="/admin.html">admin</a>
-    </footer>
-    <script src="scripts/index.js"></script>
-    <script>
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "firebase/app";
-    import { getAnalytics } from "firebase/analytics";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-    apiKey: "AIzaSyAH47c0r_tByJlP45KjhSxOVigEJcOGDYg",
-    authDomain: "senhas-row.firebaseapp.com",
-    projectId: "senhas-row",
-    storageBucket: "senhas-row.appspot.com",
-    messagingSenderId: "913751740632",
-    appId: "1:913751740632:web:fe6a06661437b867a507ad",
-    measurementId: "G-76F8EV63NR"
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    </script>
+    <script src="/scripts/admin.js"></script></script>
 </body>
 </html>
