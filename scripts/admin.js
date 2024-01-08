@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://localhost:8080'); // Conectar ao servidor WebSocket
+const socket = new WebSocket('ws://54.207.89.214:8080'); // Conectar ao servidor WebSocket
 
 // Função para atualizar a interface com os dados recebidos do servidor
 function updateUI(data) {
