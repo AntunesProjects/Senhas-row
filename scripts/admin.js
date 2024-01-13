@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://54.207.89.214:8080'); // Conectar ao servidor WebSocket
+const socket = new WebSocket('ws://127.0.0.1:8080'); // Conectar ao servidor WebSocket
 
 // Função para atualizar a interface com os dados recebidos do servidor
 function updateUI(data) {
@@ -30,15 +30,23 @@ document.querySelector('input[type="text"]').addEventListener('keydown', (event)
 document.getElementById('zerar').addEventListener('click', () => {
   const confirmacao = confirm('Tem certeza que deseja zerar tudo?');
   if (confirmacao) {
-    socket.send('resetar');
+    const zerosConsecutivos = '0'.repeat(4); // Criar a string com 4 zeros consecutivos
+    socket.send(zerosConsecutivos);
   }
 });
 
 // Receber mensagens do servidor
 socket.addEventListener('message', (event) => {
   const data = JSON.parse(event.data);
-  updateUI(data);
+  if (data.resetar) {
+    document.querySelector('.numero').textContent = '00'; // Define a senha atual como 00 após o reset
+    const historicoElements = document.querySelectorAll('.senha p');
+    historicoElements.forEach(element => {
+      element.textContent = '0'; // Define o histórico como 0 após o reset
+    });
+  } else {
+    updateUI(data);
+  }
 });
-
 
 

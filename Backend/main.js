@@ -7,7 +7,7 @@ let historico = [];
 
 function atualizarHistorico(numero) {
   historico.push(numero);
-  if (historico.length > 3) {
+  if (historico.length > 4) {
     historico.shift(); // Remove o elemento mais antigo se o histórico tiver mais de 3 itens
   }
 }
@@ -20,15 +20,19 @@ wss.on('connection', (ws) => {
     if (message === 'resetar') {
       senhaAtual = 0;
       historico = [];
+      wss.clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify({ resetar: true }));
+        }
+      });
     } else {
       senhaAtual = parseInt(message);
       atualizarHistorico(senhaAtual);
+      wss.clients.forEach((client) => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify({ senhaAtual, historico }));
+        }
+      });
     }
-
-    wss.clients.forEach((client) => {
-      if (client.readyState === WebSocket.OPEN) {
-        client.send(JSON.stringify({ senhaAtual, historico }));
-      }
-    });
   });
 });
