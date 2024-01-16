@@ -13,6 +13,11 @@ main {
     justify-content: space-between;
 }
 
+#playAudio, main a {
+    display: none;
+}
+
+
 main h1{
     margin: 3vh 0;
 }
