@@ -1,12 +1,13 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 /*BACKGROND E CABEÇALHO */
 
 main {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +20,9 @@ main {
 
 
 main h1{
-    margin: 3vh 0;
+    font-size: 5vh;
+    color: aliceblue;
+    font-weight: 900;
 }
 
 .background {
@@ -37,15 +40,32 @@ main h1{
     max-height: 100%; 
 }
 
+
+.logo1 {
+    position: absolute;
+    top: 5%;
+    left: 4%;
+    max-width: 22%;
+    height: auto;
+}
+
+.logo2 {
+    position: absolute;
+    bottom: 5%;
+    right: 4%;
+    max-width: 22%;
+    height: auto;
+}
+
 /*CORPO*/
 
 .container{
-    margin-top: 5vw;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
+    flex-direction: column;
     width: 100vw;
-    height: 60vh;
+    height: 100vh;
 }
 
 #senha-atual {
@@ -54,104 +74,52 @@ main h1{
     align-items: center;
     justify-content: center;
     background-color: rgba(224, 194, 20, 0.856);
-    width: 30vw;
-    height: 45vh;  
-    border-radius: 10px;
-    font-size: 2vw;
-    font-weight: 800;
-    margin-left: 30vh;
-    margin-right: 5vh;
+    min-width: 30vw;
+    min-height: 45vh;
+    padding: 0 2vh;  
+    border-radius: 70px;
+    font-weight: 900;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.425);
+    font-size: 12vw;
 }
 
-.numero {
-    font-size: 16vw;
+.senha-atual-texto {
+    font-size: 2vw;
+    margin-top: vw;
 }
 
 .senha-historico {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: rgb(114, 114, 114);
-    width: 15vw;
-    height: 30vh;
+    justify-content: space-around;
+    background-color: aliceblue;
+    min-width: 30vw;
+    height: 20vh;
     border-radius: 10px;
-    font-size: 2.5vh;
-    font-weight: 800;
+    font-size: 3vh;
+    font-weight: 900;
     text-align: center;
+    color: rgb(224, 47, 157);
+    border-radius: 50px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.425);
 }
 
-.senha-historico p{
-    margin-top: 2vh;
+.senha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 3vh;
 }
 
-
-
-@media screen and (max-width: 1000px) {
-    main h1{
-        text-align: center;
-    }
-    
-    .container{
-        margin-top: 2vw;
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        height: 80vh;
-        align-items: center;
-    }
-
-    .admin, .senha-atual, .senha-historico {
-        margin: 1vh;
-    }
-
-    .admin {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(114, 114, 114);
-        width: 50vw;
-        height: 30vh;
-        border-radius: 10px;
-        font-size: larger;
-        font-weight: 800;
-    }
-
-    .admin button, .admin input {
-        width: 30vw;
-        height: 15vh;
-        max-width: 30vw;
-        max-height: 3.7vh;
-        margin-top: 2vh;
-        border-radius: 5px;
-        font-weight: 700;
-    }
-
-    #senha-atual {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(224, 194, 20, 0.856);
-        width: 50vw;
-        height: 45vh;  
-        border-radius: 10px;
-        font-size: 5vw;
-        font-weight: 800;
-    }
-
-    .senha-historico {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(114, 114, 114);
-        width: 50vw;
-        height: 30vh;
-        border-radius: 10px;
-        font-size: 2.5vh;
-        font-weight: 800;
-    }
-
+.chamadas-linha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    font-size: 10vh;
+    color: rgb(207, 37, 142);
 }
+

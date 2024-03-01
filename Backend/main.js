@@ -3,11 +3,11 @@ const WebSocket = require('ws');
 const wss = new WebSocket.Server({ port: 8080 });
 
 let senhaAtual = 0;
-let historico = [0, 0, 0, 0];
+let historico = [0, 0, 0];
 
 function atualizarHistorico(numero) {
   historico.push(numero);
-  if (historico.length > 4) {
+  if (historico.length > 3) {
     historico.shift(); // Remove o elemento mais antigo se o histórico tiver mais de 3 itens
   }
 }
@@ -21,7 +21,7 @@ ws.on('message', (message) => {
 
   if (parsedMessage.resetar) {
     senhaAtual = 0;
-    historico = [0, 0, 0, 0];
+    historico = [0, 0, 0];
 
     // Enviar a senha atual e o histórico para todos os clientes após o reset
     wss.clients.forEach((client) => {

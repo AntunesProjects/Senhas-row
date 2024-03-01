@@ -1,20 +1,28 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Oswald", sans-serif;
 }
 
 /*BACKGROND E CABEÇALHO */
 
 main {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
+#playAudio, main a {
+    display: none;
+}
+
+
 main h1{
-    margin: 3vh 0;
+    font-size: 5vh;
+    color: aliceblue;
+    font-weight: 900;
 }
 
 .background {
@@ -32,38 +40,32 @@ main h1{
     max-height: 100%; 
 }
 
+
+.logo1 {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    max-width: 20%;
+    height: auto;
+}
+
+.logo2 {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+    max-width: 20%;
+    height: auto;
+}
+
 /*CORPO*/
 
 .container{
-    margin-top: 5vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 100vw;
-    height: 60vh;
-}
-
-.admin {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(114, 114, 114);
-    width: 15vw;
-    height: 30vh;
-    border-radius: 10px;
-    font-size: larger;
-    font-weight: 800;
-}
-
-.admin button, .admin input {
-    max-width: 10vw;
-    width: 15vw;
-    height: 3vh;
-    max-height: 3vh;
-    margin-top: 2vh;
-    border-radius: 5px;
-    font-weight: 700;
+    width: 100vw;
+    height: 100vh;
 }
 
 #senha-atual {
@@ -72,101 +74,132 @@ main h1{
     align-items: center;
     justify-content: center;
     background-color: rgba(224, 194, 20, 0.856);
-    width: 30vw;
-    height: 45vh;  
-    border-radius: 10px;
-    font-size: 2vw;
-    font-weight: 800;
+    min-width: 25vw;
+    min-height: 40vh;
+    padding: 0 2vh;  
+    border-radius: 70px;
+    font-weight: 900;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.425);
+    font-size: 12vw;
 }
 
-.numero {
-    font-size: 16vw;
+.senha-atual-texto {
+    font-size: 2vw;
+    margin-top: vw;
 }
 
 .senha-historico {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    background-color: rgb(114, 114, 114);
-    width: 15vw;
-    height: 30vh;
+    justify-content: space-around;
+    background-color: aliceblue;
+    min-width: 25vw;
+    height: 15vh;
     border-radius: 10px;
+    font-size: 2vh;
+    font-weight: 900;
+    text-align: center;
+    color: rgb(224, 47, 157);
+    border-radius: 50px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.425);
+}
+
+.senha{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 3vh;
+}
+
+.chamadas-linha {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 8vh;
+    color: rgb(207, 37, 142);
+}
+
+/*ADMIN*/
+
+.admin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: aliceblue;
+    min-width: 25vw;
+    height: 25vh;
     font-size: 2.5vh;
     font-weight: 800;
-    text-align: center;
+    border-radius: 50px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.425);
 }
 
-.senha-historico p{
-    margin-top: 2vh;
+#add {
+    background-color: rgb(207, 37, 142);
+    font-weight: 600;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.356); 
 }
 
+#add:hover {
+    background-color: rgb(235, 71, 172);
+}
 
+#add:active {
+    transform: translateY(0.1vh);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.356); 
+}
 
-@media screen and (max-width: 1000px) {
-    main h1{
-        text-align: center;
-    }
-    
-    .container{
-        margin-top: 2vw;
-        display: flex;
-        flex-direction: column;
-        width: 100vw;
-        height: 80vh;
-    }
+#zerar {
+    background-color: rgb(230, 227, 71);
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.356); 
+}
 
-    .admin, .senha-atual, .senha-historico {
-        margin: 1vh;
-    }
+#zerar:hover {
+    background-color: rgb(235, 197, 71);
+}
 
-    .admin {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(114, 114, 114);
-        width: 50vw;
-        height: 30vh;
-        border-radius: 10px;
-        font-size: larger;
-        font-weight: 800;
-    }
+#zerar:active {
+    transform: translateY(0.1vh);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.356); 
+}
 
-    .admin button, .admin input {
-        width: 30vw;
-        height: 15vh;
-        max-width: 30vw;
-        max-height: 3.7vh;
-        margin-top: 2vh;
-        border-radius: 5px;
-        font-weight: 700;
-    }
+.admin input {
+    background-color: #f2f2f2;
+    color: #333;
+    font-size: 16px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    cursor: text;
+}
 
-    #senha-atual {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgba(224, 194, 20, 0.856);
-        width: 50vw;
-        height: 45vh;  
-        border-radius: 10px;
-        font-size: 5vw;
-        font-weight: 800;
-    }
+.admin input::placeholder {
+    color: #999;
+}
 
-    .senha-historico {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: rgb(114, 114, 114);
-        width: 50vw;
-        height: 30vh;
-        border-radius: 10px;
-        font-size: 2.5vh;
-        font-weight: 800;
-    }
-
+.admin input:focus {
+    outline: none;
+    border-color: #007bff; /* Mudança de cor da borda quando o campo está focado */
 }
