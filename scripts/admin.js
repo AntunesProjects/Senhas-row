@@ -37,7 +37,7 @@ document.getElementById('zerar').addEventListener('click', () => {
     const zerosConsecutivos = '0'.repeat(4); // Criar a string com 4 zeros consecutivos
 
     // Atualizar localmente o array historico para [0, 0, 0, 0]
-    historico = [0, 0, 0, 0];
+    historico = [0, 0, 0];
 
     // Utilize a variável historicoElements definida externamente
     historicoElements.forEach((element, index) => {
