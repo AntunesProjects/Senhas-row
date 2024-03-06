@@ -46,6 +46,9 @@ document.getElementById('zerar').addEventListener('click', () => {
 
     // Enviar a mensagem para o servidor após atualizar localmente
     socket.send(JSON.stringify({ resetar: true }));
+
+    // Reload na página
+    window.location.reload();
   }
 });
 
