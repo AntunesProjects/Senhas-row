@@ -12,7 +12,9 @@ function updateUI(data) {
     numeroElement.textContent = data.senhaAtual;
 
     // Reproduz o áudio sempre que o número é alterado
-    audioElement.play();
+      setTimeout(() => {
+      audioElement.play();
+    }, 1000); 
   }
 
   // Atualiza o histórico na interface

@@ -74,7 +74,7 @@ main h1{
     align-items: center;
     justify-content: center;
     background-color: rgba(224, 194, 20, 0.856);
-    min-width: 30vw;
+    min-width: 50vw;
     min-height: 45vh;
     padding: 0 2vh;  
     border-radius: 70px;
@@ -94,10 +94,10 @@ main h1{
     align-items: center;
     justify-content: space-around;
     background-color: aliceblue;
-    min-width: 30vw;
-    height: 20vh;
+    min-width: 25vw;
+    min-height: 15vh;
     border-radius: 10px;
-    font-size: 3vh;
+    font-size: 2vh;
     font-weight: 900;
     text-align: center;
     color: rgb(224, 47, 157);
@@ -111,15 +111,17 @@ main h1{
     justify-content: center;
     width: 100%;
     height: 100%;
-    padding: 0 3vh;
+    padding: 1vh 15vh;
 }
 
 .chamadas-linha {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
     width: 100%;
-    font-size: 10vh;
+    height: 100%;
+    font-size: 4vh;
     color: rgb(207, 37, 142);
 }
 
