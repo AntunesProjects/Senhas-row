@@ -1,5 +1,6 @@
 const socket = new WebSocket('ws://127.0.0.1:8080'); // Conectar ao servidor WebSocket
 const audioElement = new Audio('/assets/bell.mp3');
+let isPlaying = false;
 
 // Função para atualizar a interface com os dados recebidos do servidor
 function updateUI(data) {
@@ -12,9 +13,7 @@ function updateUI(data) {
     numeroElement.textContent = data.senhaAtual;
 
     // Reproduz o áudio sempre que o número é alterado
-      setTimeout(() => {
-      audioElement.play();
-    }, 1000); 
+    playAudio();
   }
 
   // Atualiza o histórico na interface
@@ -33,8 +32,20 @@ socket.addEventListener('message', (event) => {
 const numeroElement = document.querySelector('.numero');
 const observer = new MutationObserver(() => {
   // Reproduz o áudio sempre que o número é alterado
-  audioElement.play();
+  playAudio();
 });
 
 // Configura o MutationObserver para observar mudanças no conteúdo do elemento
 observer.observe(numeroElement, { childList: true, subtree: true });
+
+// Função para reproduzir o áudio
+function playAudio() {
+  if (!isPlaying) {
+    isPlaying = true;
+    audioElement.currentTime = 0;
+    audioElement.play();
+    audioElement.onended = function() {
+      isPlaying = false;
+    };
+  }
+}
