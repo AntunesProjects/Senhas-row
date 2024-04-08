@@ -1,5 +1,8 @@
 const socket = new WebSocket('ws://127.0.0.1:8080'); // Conectar ao servidor WebSocket
-const audioElement = new Audio('/assets/bell.mp3');
+const audioElement = new Audio();
+audioElement.src = '/assets/bell.mp3';
+audioElement.preload = 'auto'; // Define para carregar o áudio automaticamente
+
 let isPlaying = false;
 
 // Função para atualizar a interface com os dados recebidos do servidor
@@ -49,3 +52,4 @@ function playAudio() {
     };
   }
 }
+
