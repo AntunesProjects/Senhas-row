@@ -1,4 +1,4 @@
-const socket = new WebSocket('ws://54.207.89.214:8080'); // Conectar ao servidor WebSocket
+const socket = new WebSocket('ws://10.100.10.91:8080'); // Conectar ao servidor WebSocket
 
 const historicoElements = document.querySelectorAll('.senha p');
 const novoNomeInput = document.getElementById('novoNome');
